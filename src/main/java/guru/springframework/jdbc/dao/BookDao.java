@@ -1,6 +1,7 @@
 package guru.springframework.jdbc.dao;
 
 import guru.springframework.jdbc.domain.Book;
+import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
@@ -8,6 +9,8 @@ import java.util.List;
  * Created by jt on 8/29/21.
  */
 public interface BookDao {
+
+    List<Book> findAllBooks(Pageable pageable);
 
     List<Book> findAllBooks(int pageSize, int offset);
 
