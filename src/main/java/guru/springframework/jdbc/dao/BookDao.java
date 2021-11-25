@@ -8,7 +8,9 @@ import java.util.List;
  * Created by jt on 8/29/21.
  */
 public interface BookDao {
-    
+
+    List<Book> findAllBooks();
+
     Book getById(Long id);
 
     Book findBookByTitle(String title);
