@@ -2,6 +2,7 @@ package guru.springframework.jdbc.dao;
 
 import guru.springframework.jdbc.domain.Book;
 import guru.springframework.jdbc.repositories.BookRepository;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
 
@@ -28,17 +29,25 @@ public class BookDaoImpl implements BookDao {
 
     @Override
     public List<Book> findAllBooks(Pageable pageable) {
-        return null;
+        return bookRepository.findAll(pageable).getContent();
     }
 
     @Override
     public List<Book> findAllBooks(int pageSize, int offset) {
-        return null;
+        Pageable pageable = PageRequest.ofSize(pageSize);
+
+        if (offset > 0) {
+            pageable = pageable.withPage(offset / pageSize);
+        } else {
+            pageable = pageable.withPage(0);
+        }
+
+        return this.findAllBooks(pageable);
     }
 
     @Override
     public List<Book> findAllBooks() {
-        return null;
+        return bookRepository.findAll();
     }
 
     @Override
