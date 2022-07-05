@@ -3,10 +3,10 @@ package guru.springframework.jdbc.dao;
 import guru.springframework.jdbc.domain.Book;
 import org.springframework.data.domain.Pageable;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Query;
-import javax.persistence.TypedQuery;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Query;
+import jakarta.persistence.TypedQuery;
 import java.util.List;
 
 /**
