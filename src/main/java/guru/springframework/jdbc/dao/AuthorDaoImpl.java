@@ -3,8 +3,8 @@ package guru.springframework.jdbc.dao;
 import guru.springframework.jdbc.domain.Author;
 import guru.springframework.jdbc.repositories.AuthorRepository;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.transaction.Transactional;
 
 /**
  * Created by jt on 8/28/21.
